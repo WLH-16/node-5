@@ -10,13 +10,13 @@ When authenticating users in a web application, it's common practice to require 
 
 ### Why Authentication?
 
-There are many different reasons why we would setup an authentcation process in our applications. We will use it whenever we want to create a unique experience for the user based off of their own personal information, whenever or servers need to know exactly who is accessing that data because different users will have different permissions to what data they can access, we also need to protect the user information.
+There are many different reasons why we would setup an authentication process in our applications. We will use it whenever we want to create a unique experience for the user based off of their own personal information, whenever our servers need to know exactly who is accessing that data because different users will have different permissions to what data they can access. We also need to protect the user information.
 
 There are two ways that we can go about setting up `authentication` into our web applications.
 
 ### Basic Authentication Built Into HTTP
 
-Basic authentication is an authentication scheme that's built into http requests. This is a very simple way to set access restricitions for specific web resources.
+Basic authentication is an authentication scheme that's built into http requests. This is a very simple way to set access restrictions for specific web resources.
 
 Credentials are `encoded` and sent through the header of the http request.
 
@@ -56,33 +56,33 @@ Now what do we do when we recieve that information on our server?
 
 * We DO NOT store encypted passwords in the database
 
-We need to add another level complexity by `hashing` the password before storing it. 
+We need to add another level of complexity by `hashing` the password before storing it. 
 
 ### Hashing
 
 Hashing is another way that we can protect data. We will `hash` user passwords before storing them.
 
-Hashed password will become a random string of characters that is intended to never be un-hashed.
+Hashed passwords will become a random string of characters that are intended to never be un-hashed.
 
 ![hashed pattern](images/hashed.png)
 
 A hash is pretty much impossible to reverse enginer and un-hash. This provides another very strong layer of security.
 
-So we will be storing the `hashed` passwords into our database.
+We will be storing the `hashed` passwords into our database.
 
-When we recieve the same input from a user and run the same hash algortihim on it, we will receive that same hash value so we can use that hash value to find the stored hash value in our db.
+When we recieve the same input from a user and run the same hash algorithm on it, we will receive that same hash value so we can use that hash value to find the stored hash value in our db.
 
 #### Salt 
 
 When we are hashing our passwords, we also want to add a `salt`. This will add some more complexity to the security layer to create an even more secure way to store passwords.
 
-The salt is just another set of characters that are completely random that will make the hashed string even more crazy.
+The salt is just another set of characters that are completely random that will make the hashed string even more secure.
 
 ![salt pattern](images/salt.png)
 
 ### Bcrypt
 
-We will be using `bcrypt` to generate the hashed and salted passwords. Bcrypt is an awesome library that we can us the tools from to increase the security in our applications.
+We will be using `bcrypt` to generate the hashed and salted passwords. Bcrypt is an awesome library that we can use to increase the security in our applications.
 
 #### Create A Hashed Password
 
@@ -102,7 +102,7 @@ Below is an example to create a hashed and salted password
 
 #### Reading A Hashed Password
 
-Below is an example to compare a password to hashed password
+Below is an example to compare a password to a hashed password
 
 ```js
     // Require bcrypt
