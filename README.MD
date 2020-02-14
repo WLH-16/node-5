@@ -115,3 +115,7 @@ Below is an example to compare a password to a hashed password
     let authenticated = bcrypt.compareSync(password, hashedPassword); // this will return true or false
     // use the authenticated variable to check if user is logged in successfully
 ```
+
+## Additional Resources
+ - [bcryptjs docs](https://www.npmjs.com/package/bcryptjs)
+ - [good video on hashing, encrypting, salt, and bcrypt](https://www.youtube.com/watch?v=cczlpiiu42M)
